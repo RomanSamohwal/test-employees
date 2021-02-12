@@ -1,13 +1,27 @@
 import React, {useEffect} from 'react';
-import { API } from './api/api';
+import {useDispatch, useSelector} from "react-redux";
+import { fetchUsers } from './store/users-reducer';
+import {AppRootStateType} from "./store/store";
+import { Loading } from './common/Loading';
 
 function App() {
-  useEffect(  () => {
-    API.getUsers().then(console.log)
-  },[])
+  const dispatch = useDispatch()
+
+  const status = useSelector<AppRootStateType>(state => state.app.status)
+
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [])
+
+  if(status === 'loading') {
+    return <Loading/>
+  }
+
+
   return (
-    <div>
-    </div>
+      <div>
+
+      </div>
   );
 }
 

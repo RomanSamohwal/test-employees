@@ -7,7 +7,7 @@ const instance = axios.create({
 export const API = {
     getUsers: async () => {
         const response = await instance.get<ResponseType>('users?per_page=12');
-        return response.data.data
+        return response.data
     }
 }
 
@@ -20,7 +20,7 @@ type ResponseType = {
     "data": DataType,
     "support": SupportType
 }
-type DataType = Array<UserType>
+export type DataType = Array<UserType>
 
 type UserType = {
     "id": number,
