@@ -22,7 +22,7 @@ type ResponseType = {
 }
 export type DataType = Array<UserType>
 
-type UserType = {
+export type UserType = {
     "id": number,
     "email": string,
     "first_name": string,

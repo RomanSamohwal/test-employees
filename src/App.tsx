@@ -1,28 +1,17 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import { fetchUsers } from './store/users-reducer';
+import React from 'react';
+import {useSelector} from "react-redux";
 import {AppRootStateType} from "./store/store";
-import { Loading } from './common/Loading';
+import {Loading} from './common/Loading';
+import {TableContainer} from "./features/TableContainer";
 
 function App() {
-  const dispatch = useDispatch()
 
   const status = useSelector<AppRootStateType>(state => state.app.status)
 
-  useEffect(() => {
-    dispatch(fetchUsers())
-  }, [])
-
-  if(status === 'loading') {
+  /*if(status === 'loading') {
     return <Loading/>
-  }
-
-
-  return (
-      <div>
-
-      </div>
-  );
+  }*/
+  return <TableContainer/>
 }
 
 export default App;
