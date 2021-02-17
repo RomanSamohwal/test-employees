@@ -13,24 +13,24 @@ export const API = {
 
 //types
 type ResponseType = {
-    "page": number,
-    "per_page": number,
-    "total": number,
-    "total_pages": number,
-    "data": DataType,
-    "support": SupportType
+    page: number,
+    per_page: number,
+    total: number,
+    total_pages: number,
+    data: DataType,
+    support: SupportType
 }
 export type DataType = Array<UserType>
 
 export type UserType = {
-    "id": number,
-    "email": string,
-    "first_name": string,
-    "last_name": string,
-    "avatar": string
+    id?: number | string,
+    first_name: string,
+    last_name: string,
+    email?: string,
+    avatar?: string
 }
 
 type SupportType = {
-    "url": string,
-    "text": string
+    url: string,
+    text: string
 }

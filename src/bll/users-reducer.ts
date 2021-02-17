@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, PayloadAction, ThunkAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {setAppErrorAC, setAppStatusAC} from "./app-reducer";
 import {API, DataType, UserType} from "../api/api";
 
@@ -12,7 +12,7 @@ export const fetchUsers = createAsyncThunk(
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             return {users}
         } catch (e) {
-            thunkAPI.dispatch(setAppErrorAC({error: 'some error'}))
+            thunkAPI.dispatch(setAppErrorAC({error: e.message}))
             thunkAPI.rejectWithValue(null)
         }
     });
