@@ -10,7 +10,6 @@ function App() {
 
     const dispatch = useDispatch()
     const status = useSelector<AppRootStateType>(state => state.app.status)
-    const error = useSelector<AppRootStateType>(state => state.app.error)
 
     useEffect(() => {
         dispatch(fetchUsers())

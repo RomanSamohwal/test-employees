@@ -7,7 +7,7 @@ import style from './Header.module.css'
 
 export const Header = React.memo(() => {
         return (
-            <div>
+            <div style={{width: '100vw'}}>
                 <AppBar position="static">
                     <Toolbar className={style.navbar}>
                         <div className={style.item}>
