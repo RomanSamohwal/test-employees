@@ -4,10 +4,20 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import {NavLink} from 'react-router-dom';
 import style from './Header.module.css'
+import {makeStyles} from "@material-ui/core";
+
+
+const useStyles = makeStyles((theme: any) => ({
+    root: {
+        flexGrow: 1,
+    }
+}));
+
 
 export const Header = React.memo(() => {
+        const classes = useStyles();
         return (
-            <div>
+            <div  className={classes.root}>
                 <AppBar position="static">
                     <Toolbar className={style.navbar}>
                         <div className={style.item}>
